@@ -91,7 +91,7 @@ class DB
      */
     public function db_delete($sql)
     {
-        $this>$this->db_query($sql);
+        $this->db_query($sql);
         return mysqli_affected_rows() ? mysqli_affected_rows() : false;
     }
     /** 添加数据
@@ -100,9 +100,12 @@ class DB
      */
     public function db_insert($sql)
     {
-        $this>$this->db_query($sql);
+        $this->db_query($sql);
         return mysqli_affected_rows() ? mysqli_affected_rows() : false;
     }
+    /** 析构函数
+     *
+    */
     public function __destruct()
     {
         $db = $this->db;
