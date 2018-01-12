@@ -103,4 +103,9 @@ class DB
         $this>$this->db_query($sql);
         return mysqli_affected_rows() ? mysqli_affected_rows() : false;
     }
+    public function __destruct()
+    {
+        $db = $this->db;
+        $db->mysqli_close();
+    }
 }
