@@ -82,8 +82,8 @@ class DB
      */
     public function db_update($sql)
     {
-        $this->db_query($sql);
-        return mysqli_affected_rows() ? mysqli_affected_rows() : false;
+        $res = $this->db_query($sql);
+        return mysqli_stmt_affected_rows($res) ? mysqli_stmt_affected_rows($res) : false;
     }
     /** 删除数据
      * @param string $sql，要删除sql语句
